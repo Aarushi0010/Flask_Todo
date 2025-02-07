@@ -42,7 +42,7 @@
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button class="btn btn-outline-dark" type="submit">Search</button>
             </form>
           </div>
         </div>
@@ -69,6 +69,13 @@
       <div class = "container my-3">
         <h2>ToDos</h2>
         <table class="table">
+          {% if  allTodo|length ==0 %}
+          <div class='alert alert-dark' role = 'alert'>
+            No Todos. Add one now!
+          </div>
+
+
+          {% else %}
           <thead>
             <tr>
               <th scope="col">SNo</th>
@@ -85,14 +92,15 @@
               <td>{{todo.title}}</td>
               <td>{{todo.desc}}</td>
               <td>{{todo.date_created}}</td>
-              <td><button href = "/Edit/{{todo.sno}}" type="button" class="btn btn-outline-secondary  mx-1">Edit</button></td>
-              <td><button href = "/Delete/{{todo.sno}}" type="button" class="btn btn-outline-secondary  mx-1">Delete</button></td>
+              <td><a href = "/Edit/{{todo.sno}}" type="button" class="btn btn-outline-secondary  mx-1">Edit</a>
+              <a href = "/delete/{{todo.sno}}" type="button" class="btn btn-outline-secondary  mx-1">Delete</a></td>
             </tr>
             {% endfor %}
             
             
           </tbody>
         </table>
+        {% endif %}
       </div>
 
 
