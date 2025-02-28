@@ -1,4 +1,4 @@
-Don't worry you don't have to read this silly readme , it's just for my future references ! <br><br>
+This is just a silly readme for my future references ! <br><br>
 
 1. Initialize virtual environment in your project folder so all the the installed stuff stays in this envronment only . <br> cmd : pip install virtualenv <br>
 2. Renmame the virtual env using cmd : virtualenv "env_name" and also activate it using comd : <br> env\Scripts\Activate [For windows] <br>
